@@ -12,7 +12,7 @@ html{
     width: 100vw;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
-    background-color: black;
+    /*background-color: black;*/
     color:black;
     font-family: Helvetica, sans-serif;
 }
@@ -25,14 +25,12 @@ html{
 .mini-arriba {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: black;
   height: 40%;
 }
 
 .mini-abajo {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: black;
   height: 60%;
 }
 
@@ -55,7 +53,7 @@ html{
 
 .filaminiabajo{
   grid-row: span 1;
-  grid-column: span 3;
+  grid-column: span 4;
 }
 
 .gigante {
@@ -102,6 +100,7 @@ html{
 }
 
 
+
 .button{
   border: none;
   color: black;
@@ -131,6 +130,29 @@ html{
   }
 
 
+
+  .zanahorias{
+    background-image:url('https://dam.cocinafacil.com.mx/wp-content/uploads/2018/09/beneficios-de-la-zanahoria.jpg')
+  }
+  .paltas{
+    background-image: url('https://fedefruta.cl/wp-content/uploads/2018/03/paltas-1.jpg')
+  }
+
+
+  .guindas{
+    background-image: url('https://www.consumer.es/wp-content/uploads/2019/07/img_cerezas-1-1280x720.jpg')
+  }
+
+
+  .imagenfondo{
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: black; 
+        }
+
+
+
 </style>
 </head>
 <body>
@@ -140,39 +162,39 @@ html{
     <div class="ancho color verde bordeabajo bordederecho centrar">2</div>
     <div class="ancho color azul bordeabajo centrar">3</div>  
     <div class="alto color rojo bordederecho bordeabajo centrar">4</div>
-    <div class="gigante color blanco">
+    <div class="gigante imagenfondo zanahorias">
       <div class="mini-arriba">
-          <div class="color azul bordeabajo bordederecho centrar">
+          <div class="centrar">
              <button class="button color gris">Boton 1</button>
 
           </div>
-          <div class="color rojo bordederecho bordeabajo centrar">
+          <div class="centrar">
              <button class="button color gris">Boton 2</button>
             
           </div>
-          <div class="color verde bordeabajo bordederecho centrar">
+          <div class="centrar">
              <button class="button color gris">Boton 3</button> 
           </div>
       </div>
       <div class="mini-abajo">
-          <div class="color rojo bordeabajo bordederecho centrar">
+          <div class="centrar">
              <button class="button circular color rojo">Circular 1</button>             
           </div>
-          <div class="color azul bordeabajo bordederecho centrar">
+          <div class="centrar">
              <button class="button circular color verde">Circular 2</button>             
           </div>
-          <div class="color rojo bordeabajo bordederecho centrar">
+          <div class="centrar">
              <button class="button circular color azul">Circular 3</button> 
           </div>
       </div>
     </div>  
 
-    <div class="alto color rojo bordeabajo centrar">5</div>
-    <div class="alto color verde bordeabajo bordederecho centrar">6</div>
-    <div class="alto color azul bordeabajo centrar">7</div>
-    <div class="ancho color azul bordederecho centrar"> 9 </div>
-    <div class="ancho color verde bordederecho centrar"> 10 </div>
-    <div class="ancho color rojo bordederecho centrar"> 10 </div>
+    <div class="alto color rojo bordeabajo bordeizquierdo centrar">5</div>
+    <div class="alto color verde bordederecho centrar">6</div>
+    <div class="alto color azul bordeizquierdo centrar">7</div>
+    <div class="ancho color azul bordederecho bordearriba centrar"> 9 </div>
+    <div class="ancho color verde bordederecho bordearriba centrar"> 10 </div>
+    <div class="ancho color rojo bordederecho bordearriba centrar"> 10 </div>
 </div>
 
 </body>
