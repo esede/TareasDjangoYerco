@@ -134,17 +134,7 @@ html{
 
 
 
-  .zanahorias{
-    background-image:url('https://dam.cocinafacil.com.mx/wp-content/uploads/2018/09/beneficios-de-la-zanahoria.jpg')
-  }
-  .paltas{
-    background-image: url('https://fedefruta.cl/wp-content/uploads/2018/03/paltas-1.jpg')
-  }
 
-
-  .guindas{
-    background-image: url('https://www.consumer.es/wp-content/uploads/2019/07/img_cerezas-1-1280x720.jpg')
-  }
 
 
   .imagenfondo{
@@ -165,18 +155,18 @@ html{
     <div id="r2" class="rectangulo ancho color verde bordeabajo bordederecho centrar">2</div>
     <div id="r3" class="rectangulo ancho color azul bordeabajo centrar">3</div>  
     <div id="r4" class="rectangulo alto color rojo bordederecho bordeabajo centrar">4</div>
-    <div id="gigante" class="gigante imagenfondo zanahorias">
+    <div id="gigante" class="imagenfondo  gigante "> <!-- imagenfondo zanahorias -->
       <div class="mini-arriba">
           <div class="centrar">
-             <button class="button color gris">Boton 1</button>
+             <button class="button color gris" onclick="cambiarimagen('1')">Boton 1</button>
 
           </div>
           <div class="centrar">
-             <button class="button color gris">Boton 2</button>
+             <button class="button color gris" onclick="cambiarimagen('2')">Boton 2</button>
             
           </div>
           <div class="centrar">
-             <button class="button color gris">Boton 3</button> 
+             <button class="button color gris" onclick="cambiarimagen('3')">Boton 3</button>
           </div>
       </div>
       <div class="mini-abajo">
@@ -211,6 +201,7 @@ html{
 
   const diccionario={"r1":rojo,"r2":verde,"r3":azul,"r4":rojo,"r5":rojo,"r6":verde,"r7":azul,"r8":azul,"r9":verde,"r10":rojo};
 
+const dicveg={"1":"url('https://dam.cocinafacil.com.mx/wp-content/uploads/2018/09/beneficios-de-la-zanahoria.jpg')","2":"url('https://fedefruta.cl/wp-content/uploads/2018/03/paltas-1.jpg')","3":"url('https://www.consumer.es/wp-content/uploads/2019/07/img_cerezas-1-1280x720.jpg')"};
 
 
   function cambiarcolor(argument) {
@@ -226,6 +217,14 @@ html{
     }
   }
 
+    document.getElementById("gigante").style.backgroundImage=dicveg["1"];
+
+  function cambiarimagen(argument){
+    document.getElementById("gigante").style.backgroundImage=dicveg[argument];
+
+    console.log(argument)
+  }
+
 
 </script>
 
@@ -234,6 +233,7 @@ html{
 
 </body>
 </html>
+
 
 
 
