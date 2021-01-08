@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="src\css\style.css">
+    <script src="src\js\script.js" type="text/javascript"></script>
+    <title>Tarea en pareja Jquery</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <header>
+      <div class="row" style="height: 15vh">
+        <div onclick="colorChangeRed()" id="red" style="background-color:red;" class="col-sm-4 h-100 border border-dark"></div>
+        <div onclick="colorChangeGreen()" id="green" class="col-sm-4 h-100 border border-dark" style="background-color:green;"></div>
+        <div onclick="colorChangeBlue()" id="blue" class="col-sm-4 h-100 border border-dark" style="background-color:blue;"></div>
+      </div>
+    </header>
+    <div class="row" style="height: 70vh">
+      <div class="col-sm-2 h-100">
+        <div onclick="colorChangeRed()" id="red2" class="row border border-dark" style="height: 50%; background-color: red"></div>
+        <div onclick="colorChangeGreen()" id="green2" class="row border border-dark" style="height: 50%; background-color: green"></div>
+      </div>
+      <div id="imagen" class="col-sm-8 h-100 imagenfondo">
+        <div class="row" style="height: 100%">
+          <div class="col-sm-4 h-100">
+             <div class="row" style="height: 30%">
+                <div class="col-sm-12 centrar">
+                   <button id="avanzar" type="button" class="btn btn-dark">Boton 1</button>
+                </div>
+             </div>
+            <div class="row centrar" style="height: 70%">
+                <button onmouseover="cambiarColorTodoRojo()" onmouseout="volverColor()" type="button" class="btn btn-danger btn-circle btn-xl border border-dark">Todo rojo</button> 
+            </div>
+          </div>
+        <div class="col-sm-4">
+             <div class="row" style="height: 30%">
+                <div class="col-sm-12 centrar">
+                   <button onclick="fondoBlanco()" type="button" class="btn btn-dark">Boton 2</button>
+                </div>
+             </div>
+            <div class="row centrar" style="height: 70%">
+              <button onmouseover="cambiarColorTodoVerde()" onmouseout="volverColor()" type="button" class="btn btn-success btn-circle btn-xl border border-dark">Todo verde</button> 
+            </div>  
+        </div>
+        <div class="col-sm-4">
+             <div class="row" style="height: 30%">
+                <div class="col-sm-12 centrar">
+                   <button id="retroceder" type="button" class="btn btn-dark">Boton 3</button>
+                </div>
+             </div>
+            <div class="row centrar" style="height: 70%">
+              <button onmouseover="cambiarColorTodoAzul()" onmouseout="volverColor()" type="button" class="btn btn-primary btn-circle btn-xl border border-dark">Todo azul</button> 
+            </div>
+        </div>
+        </div>
+      </div>
+    <div class="col-sm-2 h-100">
+        <div onclick="colorChangeRed()" id="red3" class="row border border-dark" style="height: 50%; background-color: red"></div>
+        <div onclick="colorChangeGreen()" id="green3" class="row border border-dark" style="height: 50%; background-color: green"></div>
+      </div>
+    </div>
+    <div class="row" style="height: 15vh">
+      <div onclick="colorChangeRed()" id="red4" class="col-sm-4 h-100 border border-dark" style="background-color:red;" ></div>
+      <div onclick="colorChangeGreen()" id="green4" class="col-sm-4 h-100 border border-dark" style="background-color:green;"></div>
+      <div onclick="colorChangeBlue()" id="blue2" class="col-sm-4 h-100 border border-dark" style="background-color:blue;" ></div>  
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="src\js\script.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+</body>
+</html>   
