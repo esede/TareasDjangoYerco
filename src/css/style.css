@@ -1,0 +1,23 @@
+.imagenfondo{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black; 
+}
+
+.btn-circle.btn-xl { 
+    width: 120px; 
+    height:120px; 
+    padding: 10px 16px; 
+    border-radius: 60px; 
+    font-size: 16px; 
+    text-align: center;
+}
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#red{
+    background-color: red;
+}
