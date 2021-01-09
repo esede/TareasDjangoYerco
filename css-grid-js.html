@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <style>
 html{
@@ -35,7 +37,7 @@ html{
 }
 
 .rectangulo{
-  background-color=white;
+  background-color=   white;
 }
 
 .rectangulo.ancho{
@@ -62,10 +64,11 @@ html{
 .gigante {
   grid-row: span 8;
   grid-column: span 10;
+  background-color: black;
 }
 
 .color.gris{
-  background-color: gray;
+  background-color: gainsboro;
 }
 
 .color.rojo{
@@ -84,9 +87,6 @@ html{
   background-color: white;
 }
 
-.color.gris{
-  background-color: gray;
-}
 
 
 .bordeizquierdo{
@@ -118,6 +118,7 @@ html{
   height: 10vw;
   width: 10vw;
   border: 3px solid black;
+  font-weight: bold;
 
 }
 
@@ -141,7 +142,7 @@ html{
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          background-color: black; 
+          background-color: white; 
         }
 
 
@@ -158,26 +159,26 @@ html{
     <div id="gigante" class="imagenfondo  gigante "> <!-- imagenfondo zanahorias -->
       <div class="mini-arriba">
           <div class="centrar">
-             <button class="button color gris" onclick="cambiarimagen('1')">Boton 1</button>
+             <button class="button color gris" onclick="mover(-1)">Boton 1</button>
 
           </div>
           <div class="centrar">
-             <button class="button color gris" onclick="cambiarimagen('2')">Boton 2</button>
+             <button class="button color gris" onclick="mover(3)">Boton 2</button>
             
           </div>
           <div class="centrar">
-             <button class="button color gris" onclick="cambiarimagen('3')">Boton 3</button>
+             <button class="button color gris" onclick="mover(1)">Boton 3</button>
           </div>
       </div>
       <div class="mini-abajo">
           <div class="centrar">
-             <button class="button circular color rojo" onmouseover="cambiarcolor('red')" onmouseout="devolvercolor()">Circular 1</button>             
+             <button class="button circular color rojo" onmouseover="cambiarcolor(rojo)" onmouseout="ponercoloractual()">Circular 1</button>             
           </div>
           <div class="centrar">
-             <button class="button circular color verde" onmouseover="cambiarcolor('green')" onmouseout="devolvercolor()">Circular 2</button>             
+             <button class="button circular color verde" onmouseover="cambiarcolor(verde)" onmouseout="ponercoloractual()">Circular 2</button>             
           </div>
           <div class="centrar">
-             <button class="button circular color azul" onmouseover="cambiarcolor('blue')" onmouseout="devolvercolor()">Circular 3</button> 
+             <button class="button circular color azul" onmouseover="cambiarcolor(azul)" onmouseout="ponercoloractual()">Circular 3</button> 
           </div>
       </div>
     </div>  
@@ -198,32 +199,98 @@ html{
   const rojo= "rgb(255, 117, 109)";
   const verde= "rgb(133, 222, 119)";
   const azul = "rgb(118, 159, 202)";
+  const blanco = "rgb(255, 255, 255)";
 
   const diccionario={"r1":rojo,"r2":verde,"r3":azul,"r4":rojo,"r5":rojo,"r6":verde,"r7":azul,"r8":azul,"r9":verde,"r10":rojo};
 
-const dicveg={"1":"url('https://dam.cocinafacil.com.mx/wp-content/uploads/2018/09/beneficios-de-la-zanahoria.jpg')","2":"url('https://fedefruta.cl/wp-content/uploads/2018/03/paltas-1.jpg')","3":"url('https://www.consumer.es/wp-content/uploads/2019/07/img_cerezas-1-1280x720.jpg')"};
+  const dicveg={
+  "0":"url('https://bit.ly/38UGqi5')", //zanahorias
+  "1":"url('https://bit.ly/3nc9BCk')", //paltas
+  "2":"url('https://bit.ly/38UGyy5')",//guindas
+  "3":"url('')"}; // vacío
 
 
   function cambiarcolor(argument) {
-    for (i of rectangulos){
+    for (i in diccionario){
       document.getElementById(i).style.backgroundColor=argument
     }
     console.log(rectangulos)
   }
 
-  function devolvercolor(argument){
-    for (i in diccionario){
-      document.getElementById(i).style.backgroundColor=diccionario[i];
-    }
-  }
+
+
+
 
     document.getElementById("gigante").style.backgroundImage=dicveg["1"];
 
-  function cambiarimagen(argument){
-    document.getElementById("gigante").style.backgroundImage=dicveg[argument];
+  posicion=0
+  function mover(entrada){
+      if (entrada==-1 && posicion==0){posicion =2}
+      else if(entrada==3){posicion=3;
+      }
+      else {posicion = (posicion += entrada) % (3)} //2 es el largo del diccionario sin el último vacío.
+    document.getElementById("gigante").style.backgroundImage=dicveg[posicion];
+    }
 
+
+  function cambiarimagen(argument){
+    document.getElementById("gigante").style.backgroundImage=dicveg[mover(argument)];
     console.log(argument)
   }
+
+
+  var colores_por_defecto= {
+    "rojos":[["r1","r4","r5","r10"],rojo],
+    "verdes":[["r2","r6","r9"],verde,"verdes"],
+    "azules":[["r3","r7","r8"],azul,"azules"],
+    "blancos":[[],blanco]}
+  var colores_actual={...colores_por_defecto}
+
+
+// Para ponerle la función click_perifericos a cada uno de los rectángulos periféricos.
+    for (cadarectangulo of colores_actual["rojos"][0]){
+        document.getElementById(cadarectangulo).onclick=function(){click_perifericos("rojos")}}
+
+    for (cadarectangulo of colores_actual["verdes"][0]){
+    document.getElementById(cadarectangulo).onclick=function(){click_perifericos("verdes")}}
+
+    for (cadarectangulo of colores_actual["azules"][0]){
+    document.getElementById(cadarectangulo).onclick=function(){click_perifericos("azules")}}       
+
+
+  function ponercoloractual(){
+      for (elcolor in colores_actual){
+          for (rectangulo of colores_actual[elcolor][0]){
+              document.getElementById(rectangulo).style.backgroundColor=colores_actual[elcolor][1];
+          }   
+      }
+  }
+
+
+  function click_perifericos(argumento){
+      if (argumento === "rojos"){
+          colores_actual["rojos"][0]=colores_actual["rojos"][0].concat(colores_actual["azules"][0]);
+          colores_actual["azules"][0]=[]
+          ponercoloractual()
+        }
+      else if(argumento ==="verdes"){
+          colores_actual["azules"][0]=colores_actual["azules"][0].concat(colores_actual["verdes"][0])
+          colores_actual["verdes"][0]=[]
+          ponercoloractual()
+      }
+      
+      else if(argumento === "azules"){
+          colores_actual["blancos"][0] = colores_actual["rojos"][0].concat(colores_actual["azules"][0]).concat(colores_actual["verdes"][0]);
+          colores_actual["rojos"][0]=[];
+          colores_actual["verdes"][0]=[];
+          colores_actual["azules"][0]=[];
+          ponercoloractual();
+      }
+      else { console.log("recibi algomal")}
+            
+          
+  }
+
 
 
 </script>
