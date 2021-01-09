@@ -1,0 +1,61 @@
+<!DOCTYPE HTML> 
+<html> 
+	<head> 
+		<style type="text/css">
+			body{
+				text-align: center;
+			}
+
+			.estilodeprueba{
+				background-color: black;
+				color:white;
+			}
+
+
+		</style>
+	</head> 
+	
+	<body>
+		<div class="estilodeprueba">holita </div>
+
+		<p id = "GFG_UP" style = 
+			"font-size: 16px; font-weight: bold;">	 
+		</p> 
+		
+		<button onclick = "gfg_Run('yellow')"> 
+Amarillo		</button>
+
+
+		<button onclick = "gfg_Run('blue')"> 
+Azul		</button> 
+
+
+		<button onclick = "gfg_Run('red')"> 
+Rojo		</button> 
+
+
+
+		
+		<p id = "GFG_DOWN" style = 
+			"color:green; font-size: 20px; font-weight: bold;"> 
+		</p> 
+		
+		<script> 
+			var el_up = document.getElementById("GFG_UP"); 
+			var el_down = document.getElementById("GFG_DOWN"); 
+			var str = "Click on button to change the background color"; 
+		
+			el_up.innerHTML = str; 
+		
+			function changeColor(color) { 
+				document.body.style.background = color;
+			} 
+
+			function gfg_Run(entrada) { 
+				changeColor(entrada);
+				el_up.innerHTML=""
+				el_down.innerHTML = "Background Color changed"; 
+			}		 
+		</script> 
+	</body> 
+</html>					 
